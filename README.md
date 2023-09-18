@@ -61,7 +61,7 @@ More results and screencaps on different collectors will be available at later t
 
 ### Download
 
-The compile binaries (JAR) is available for download here:
+The compiled binaries (JAR) is available for download here:
 * Tomcat 8-9, \>= JDK 8 : https://www.matcphotos.com/cdn_static/dist/jars/msys-tomcat-modules-1.0.0.jar.xz
 * Tomcat 7, JDK 7 : https://www.matcphotos.com/cdn_static/dist/jars/msys-tomcat-modules-jdk7-1.0.0.jar.xz
 
