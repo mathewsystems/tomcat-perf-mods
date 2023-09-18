@@ -123,5 +123,8 @@ See LICENSE for more info.
 ## Author, Web and Contact
 
 Mathew Chan
-https://www.matcphotos.com/blog
+
+https://www.matcphotos.com/blog  
+
 mathew (dot) chan (at) mathewsystems.com
+
