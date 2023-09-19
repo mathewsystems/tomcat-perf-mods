@@ -27,8 +27,9 @@ However, once sessions expire, unused references shall be freed from the heap as
 
 ### JVM Environment
 
-* <= JDK 8: -Xms8g -Xmx8g -XX:UseParallelOldGC
-* \> JDK 8: -Xms8g -Xmx8g -XX:UseParallelGC
+* JDK 7,8: -Xms16g -Xmx16g -XX:UseParallelOldGC
+* JDK 11: -Xms16g -Xmx16g -XX:UseParallelGC
+* JDK 11, 17: -Xms16g -Xmx16g -XX:MaxGCPauseMillis=330
 
 ### Test Tools
 
@@ -46,7 +47,7 @@ Using the Oracle HotSpot Parallel Collector:
 ##### ConcurrentStandardSessionManager (Multi-threaded)
 * Freeing every ~60k sessions, ~2GB session objects per batch in heap: ~50-100 ms
 * Freeing every ~16k sessions, 4-5GB session objects per batch in heap: ~150-300 ms
-* Freeing every ~350k sessions, 8GB session objects per batch in heap: ~350-500 ms
+* Freeing every ~350k sessions, 8GB session objects per batch in heap: ~350-500 ms (on JDK 11, -Xmx16g, Parallel GC: ~100-200ms ; G1GC: ~500ms)
 
 
 ##### StandardSessionManager (Single-threaded, JDK 7 Compatible)
@@ -62,7 +63,7 @@ More results and screencaps on different collectors will be available at later t
 ### Download
 
 The compiled binaries (JAR) is available for download here:
-* Tomcat 8-9, \>= JDK 8 : https://www.matcphotos.com/cdn_static/dist/jars/msys-tomcat-modules-1.0.0.jar.xz
+* Tomcat 8,9,10.0,10.1, \>= JDK 8 : https://www.matcphotos.com/cdn_static/dist/jars/msys-tomcat-modules-1.0.0.jar.xz
 * Tomcat 7, JDK 7 : https://www.matcphotos.com/cdn_static/dist/jars/msys-tomcat-modules-jdk7-1.0.0.jar.xz
 
 For other combinations of Tomcat versions and JDK, a custom build from source is required.
@@ -124,7 +125,6 @@ See LICENSE for more info.
 
 Mathew Chan
 
-https://www.matcphotos.com/blog  
+https://www.matcphotos.com/blog
 
 mathew (dot) chan (at) mathewsystems.com
-
