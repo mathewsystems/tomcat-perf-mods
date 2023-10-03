@@ -31,6 +31,8 @@ However, once sessions expire, unused references shall be freed from the heap as
 * JDK 11: -Xms16g -Xmx16g -XX:UseParallelGC
 * JDK 11, 17: -Xms16g -Xmx16g -XX:MaxGCPauseMillis=330
 
+For a comprehensive support matrix of garbage collectors, see [Java Versions and JVM Supported Garbage Collectors Matrix](https://www.matcphotos.com/blog/pages/blog_article.xhtml?article_id=122).
+
 ### Test Tools
 
 * Java Mission Control
@@ -62,7 +64,7 @@ More results and screencaps on different collectors will be available at later t
 
 ### Download
 
-The compiled binaries (JAR) is available for download here:
+The compiled binaries (JAR) are available for download here:
 * Tomcat 8,9,10.0,10.1, \>= JDK 8 : https://www.matcphotos.com/cdn_static/dist/jars/msys-tomcat-modules-1.0.0.jar.xz
 * Tomcat 7, JDK 7 : https://www.matcphotos.com/cdn_static/dist/jars/msys-tomcat-modules-jdk7-1.0.0.jar.xz
 
@@ -78,7 +80,7 @@ e.g. /opt/tomcat9/lib , C:/tomcat9/lib
 
 ### Configuration
 
-Add, or modify the session manager configuration at CATALINA/conf/context.xml, replace, or add the following line:
+Add, or modify the session manager configuration at CATALINA/conf/context.xml, replace, or add the following line under the default "Context", or your custom contexts:
 
 * Using the multi-threaded version:
 `<Manager className="com.mathewsystems.thirdparty.tomcat.catalina.session.ConcurrentStandardSessionManager" />`

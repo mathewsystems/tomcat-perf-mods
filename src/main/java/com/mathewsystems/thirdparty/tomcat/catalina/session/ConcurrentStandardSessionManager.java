@@ -89,7 +89,7 @@ public class ConcurrentStandardSessionManager extends StandardManager {
 
         final AtomicInteger purgedCount = new AtomicInteger();
 
-        long timeNow = System.currentTimeMillis();
+        final long timeNow = System.currentTimeMillis();
 
         sessions.values().parallelStream().filter(
                 s -> (s != null && !s.isValid())
@@ -100,7 +100,7 @@ public class ConcurrentStandardSessionManager extends StandardManager {
                 }
         );
 
-        long timeEnd = System.currentTimeMillis();
+        final long timeEnd = System.currentTimeMillis();
 
         if (log.isDebugEnabled()) {
 
